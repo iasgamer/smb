@@ -51,10 +51,9 @@ bot.on("guildMemberAdd", member => {
 
 bot.on("guildCreate", guild => {
     var gjoin_embed = new Discord.RichEmbed()
-    .setAuthor("Spyer", bot.user.avatarURL)
     .setColor("96CA2D")
     .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(guild.avatarURL)
+    .setThumbnail(guild.iconURL)
     .setTimestamp()
     .setTitle(`Spyer a été ajouté à **${guild.name}**`)
     .setDescription(`ID : ${guild.id}
@@ -65,10 +64,9 @@ bot.on("guildCreate", guild => {
   
 bot.on("guildDelete", guild => {
     var gleave_embed = new Discord.RichEmbed()
-    .setAuthor("Spyer", bot.user.avatarURL)
-    .setColor("96CA2D")
+    .setColor("B9121B")
     .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(guild.avatarURL)
+    .setThumbnail(guild.iconURL)
     .setTimestamp()
     .setTitle(`Spyer a été retiré de **${guild.name}**`)
     .setDescription(`ID : ${guild.id}
