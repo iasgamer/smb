@@ -1,6 +1,7 @@
 module.exports.run = async (bot, message, args) => {
     const Discord = require('discord.js');
-const fs = require('fs');
+    const fs = require('fs');
+    var prefix = botconfig.prefix
 let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
 if (message.channel.type === "dm") return;
