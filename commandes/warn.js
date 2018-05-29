@@ -134,5 +134,5 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
   }
 }
   module.exports.config = {
-    command: "purge"
+    command: "warn"
 }
