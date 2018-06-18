@@ -19,6 +19,10 @@ var etat = "Ne pas déranger"
 } else { if (looked.presence.status == "streaming"){
     var etat = "En direct"
 }
+if (looked.nickname === null){
+  var nick = "Aucun"
+} else {
+  var nick = looked.nickname}
 }}}
   var profil_embed = new Discord.RichEmbed()
     .setAuthor("Spyer", bot.user.avatarURL)
@@ -34,7 +38,7 @@ var etat = "Ne pas déranger"
 **Joue à** ${looked.presence.game ? `${looked.presence.game.name}` : "Ce membre n'a aucune activité en cours"}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 **A rejoint le serveur le** ${moment(looked.joinedAt).format("LLLL")}
-**Surnom :** ${looked.nickname !== null ? `${looked.nickname}` : "Aucun"}
+**Surnom :** ${nick}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
