@@ -31,11 +31,11 @@ var etat = "Ne pas déranger"
 **ID :** ${looked.id}
 **Est-il un bot ?** ${checkbot}
 **Statut :** ${etat}
-**Joue à** ${looked.presence}
+**Joue à** ${looked.presence.game ? `${looked.presence.game.name}` : "Ce membre n'a aucune activité en cours"}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 **A rejoint le serveur le** ${moment(looked.joinedAt).format("LL")}
 **Surnom :** ${looked.nickname !== null ? `${looked.nickname}` : "Aucun"}
-**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Ce membre n'a aucun rôle."}
+//**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Ce membre n'a aucun rôle."}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
