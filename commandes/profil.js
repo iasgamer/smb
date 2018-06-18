@@ -19,7 +19,7 @@ var etat = "Ne pas déranger"
 } else { if (looked.presence.status == "streaming"){
     var etat = "En direct"
 }
-if (looked.nickname === null){
+if (looked.nickname == null){
   var nick = "Aucun"
 } else {
   var nick = looked.nickname}
