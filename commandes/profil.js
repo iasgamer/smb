@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   const moment = require('moment');
   var looked = message.mentions.users.first()
 if(!looked){var looked = message.author}
-var join = moment(looked.joinedAt, 'LLLL', 'fr');
+var join = moment(looked.joinedAt, 'dddd Do MMMM YYYY [à] hhhh [heures] mmmm [minutes et] ssss [secondes]', 'fr');
 if(looked.bot == true){
 var checkbot = "Affirmatif"
 } else {
