@@ -33,7 +33,7 @@ var etat = "Ne pas déranger"
 **Statut :** ${etat}
 **Joue à** ${looked.presence.game ? `${looked.presence.game.name}` : "Ce membre n'a aucune activité en cours"}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-**A rejoint le serveur le** ${moment(looked.joinedAt).format("LL")}
+**A rejoint le serveur le** ${moment(looked.joinedAt).format("LLLL")}
 **Surnom :** ${looked.nickname !== null ? `${looked.nickname}` : "Aucun"}
 `)
     .setTimestamp()
