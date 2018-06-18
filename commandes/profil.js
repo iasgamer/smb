@@ -2,8 +2,8 @@ module.exports.run = async (bot, message, args) => {
   const Discord = require('discord.js');
   const fs = require('fs');
   const moment = require('moment');
-    moment.lang("fr");
   var looked = message.mentions.users.first()
+  var join = moment(looked.joinedAt, 'LLLL', 'fr');
 if(!looked){var looked = message.author}
 if(looked.bot == true){
 var checkbot = "Affirmatif"
@@ -37,8 +37,9 @@ if (looked.nickname === null){
 **Statut :** ${etat}
 **Joue à** ${looked.presence.game ? `${looked.presence.game.name}` : "Ce membre n'a aucune activité en cours"}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-**A rejoint le serveur le** ${moment(looked.joinedAt).format("LLLL")}
+**A rejoint le serveur le** ${join}
 **Surnom :** ${nick}
+**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Ce membre n'a aucun rôle."}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
