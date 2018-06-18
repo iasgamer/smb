@@ -1,6 +1,8 @@
 module.exports.run = async (bot, message, args) => {
   const Discord = require('discord.js');
   const fs = require('fs');
+  const moment = require('moment');
+    moment.locale("fr");
   var looked = message.mentions.users.first()
 if(!looked){var looked = message.author}
 if(looked.bot == true){
