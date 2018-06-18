@@ -26,7 +26,7 @@ var etat = "Ne pas déranger"
     .setDescription(`Profil de **${looked}**
 
 **Pseudo :** ${looked.username}
-**ID :** ${looked.user.id}
+**ID :** ${looked.id}
 **Est-il un bot ?** ${checkbot}
 **Statut :** ${etat}
 **Joue à** ${looked.presence}
