@@ -16,15 +16,15 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-  const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+  const duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embedStats = new Discord.RichEmbed()
     .setTitle("*** Stats ***")
     .setColor("RANDOM")
     .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
     .addField("• Uptime ", `${duration}`, true)
-    .addField("• Users", `${client.users.size.toLocaleString()}`, true)
-    .addField("• Servers", `${client.guilds.size.toLocaleString()}`, true)
-    .addField("• Channels ", `${client.channels.size.toLocaleString()}`, true)
+    .addField("• Users", `${bot.users.size.toLocaleString()}`, true)
+    .addField("• Servers", `${bot.guilds.size.toLocaleString()}`, true)
+    .addField("• Channels ", `${bot.channels.size.toLocaleString()}`, true)
     .addField("• Discord.js", `v${version}`, true)
     .addField("• Node", `${process.version}`, true)
     .addField("• CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
