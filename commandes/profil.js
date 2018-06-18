@@ -3,8 +3,8 @@ module.exports.run = async (bot, message, args) => {
   const fs = require('fs');
   const moment = require('moment');
   var looked = message.mentions.users.first()
-  var join = moment(looked.joinedAt, 'LLLL', 'fr');
 if(!looked){var looked = message.author}
+var join = moment(looked.joinedAt, 'LLLL', 'fr');
 if(looked.bot == true){
 var checkbot = "Affirmatif"
 } else {
@@ -39,7 +39,6 @@ if (looked.nickname === null){
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 **A rejoint le serveur le** ${join}
 **Surnom :** ${nick}
-**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Ce membre n'a aucun rôle."}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
