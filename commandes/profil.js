@@ -34,8 +34,8 @@ var etat = "Ne pas déranger"
 **Joue à** ${looked.presence}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 **A rejoint le serveur le** ${moment(looked.joinedAt).format("LL")}
-**Surnom :** ${looked.nickname}
-**Rôles :** ${looked.roles}
+**Surnom :** ${looked.nickname !== null ? `${looked.nickname}` : "Aucun"}
+**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Ce membre n'a aucun rôle."}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
