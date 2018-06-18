@@ -25,7 +25,7 @@ var etat = "Ne pas déranger"
     .setThumbnail(looked.avatarURL)
     .setDescription(`Profil de **${looked}**
 
-**Pseudo :** ${looked.user.tag}
+**Pseudo :** ${looked.username}
 **ID :** ${looked.user.id}
 **Est-il un bot ?** ${checkbot}
 **Statut :** ${etat}
