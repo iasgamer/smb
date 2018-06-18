@@ -35,7 +35,7 @@ var etat = "Ne pas déranger"
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 **A rejoint le serveur le** ${moment(looked.joinedAt).format("LL")}
 **Surnom :** ${looked.nickname}
-**Rôles :** ${looked.roles.filter(r => r.id !== message.guild.id).map(roles => roles.name)}
+**Rôles :** ${looked.roles}
 `)
     .setTimestamp()
   message.channel.send(profil_embed)
