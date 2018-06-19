@@ -47,32 +47,5 @@ bot.on("guildMemberAdd", member => {
 	member.addRole(role3)
 	member.addRole(role4)
     });
-//LOGS
-
-bot.on("guildCreate", guild => {
-    var gjoin_embed = new Discord.RichEmbed()
-    .setColor("96CA2D")
-    .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(guild.iconURL)
-    .setTimestamp()
-    .setTitle(`Spyer a été ajouté à **${guild.name}**`)
-    .setDescription(`ID : ${guild.id}
-:family_mwgb: Membres : ${guild.memberCount} membres !`)
-    bot.channels.find("id", "447664531636748298").send(gjoin_embed);
-    bot.user.setActivity(`Gérer le serveur | Aide ${bot.users.size} utilisateurs`, {type: `PLAYING`});
-  });
-  
-bot.on("guildDelete", guild => {
-    var gleave_embed = new Discord.RichEmbed()
-    .setColor("B9121B")
-    .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(guild.iconURL)
-    .setTimestamp()
-    .setTitle(`Spyer a été retiré de **${guild.name}**`)
-    .setDescription(`ID : ${guild.id}
-:family_mwgb: Membres : ${guild.memberCount} membres !`)
-    bot.channels.find("id", "447664531636748298").send(gleave_embed);
-    bot.user.setActivity(`Gérer le serveur | Aide ${bot.users.size} utilisateurs`, {type: `PLAYING`});
-  });
 
 bot.login(process.env.TOKEN);
