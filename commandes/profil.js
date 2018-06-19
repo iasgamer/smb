@@ -2,9 +2,9 @@ module.exports.run = async (bot, message, args) => {
   const Discord = require('discord.js');
   const fs = require('fs');
   const moment = require('moment');
+  moment.locale("fr");
   var looked = message.mentions.users.first()
 if(!looked){var looked = message.author}
-var join = moment(looked.joinedAt, 'dddd Do MMMM YYYY [à] hhhh [heures] mmmm [minutes et] ssss [secondes]', 'fr');
 if(looked.bot == true){
 var checkbot = "Affirmatif"
 } else {
@@ -37,7 +37,7 @@ if (looked.nickname == null){
 **Statut :** ${etat}
 **Joue à** ${looked.presence.game ? `${looked.presence.game.name}` : "Ce membre n'a aucune activité en cours"}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-**A rejoint le serveur le** ${join}
+**A rejoint le serveur le** ${moment(looked.joinedTimestamp).format("LL")}
 **Surnom :** ${nick}
 `)
     .setTimestamp()
