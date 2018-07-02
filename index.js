@@ -20,34 +20,6 @@ fs.readdir('./commandes/', (err, files) => {
 
 })
 
-bot.on("guildMemberAdd", member => {
-    var join_embed = new Discord.RichEmbed()
-    .setAuthor("Spyer", bot.user.avatarURL)
-    .setColor("96CA2D")
-    .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTimestamp()
-    .setTitle(`Arrivée d'un nouveau membre !`)
-    .setDescription(`**${member.username}** vient d'arriver sur ${member.guild.name}
-Nombre de membres après l'arrivée de ${member.user.tag} : ${member.guild.memberCount}`)
-    member.guild.channels.find("name", "spyer-logs").send(join_embed)
-    bot.user.setActivity(`Gérer le serveur | Aide ${bot.users.size} utilisateurs`, {type: `PLAYING`});
-});
-
-bot.on("guildMemberRemove", member => {
-    var leave_embed = new Discord.RichEmbed()
-    .setAuthor("Spyer", bot.user.avatarURL)
-    .setColor("B9121B")
-    .setFooter("Spyer | Développé par LePtitMetalleux", bot.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTimestamp()
-    .setTitle(`Départ d'un membre`)
-    .setDescription(`**${member.username}** vient de partir de ${member.guild.name}
-Nombre de membres après le départ de ${member.user.tag} : ${member.guild.memberCount}`)
-    member.guild.channels.find("name", "spyer-logs").send(leave_embed);
-    bot.user.setActivity(`Gérer le serveur | Aide ${bot.users.size} utilisateurs`, {type: `PLAYING`});
-    });
-
 bot.on("channelCreate", channel => {
     var channel_create_embed = new Discord.RichEmbed()
     .setAuthor("Spyer", bot.user.avatarURL)
