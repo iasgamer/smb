@@ -110,7 +110,7 @@ bot.on("guildMemberAdd", member => {
     var join_embed = new Discord.RichEmbed()
     .setAuthor("Spyer", bot.user.avatarURL)
     .setColor("96CA2D")
-    .setFooter(`Bienvenue à toi ${member} !`, member.user.avatarURL)
+    .setFooter(`Bienvenue à toi !`, member.user.avatarURL)
     .setThumbnail(member.user.avatarURL)
     .setTimestamp()
     .setTitle(`Arrivée d'un nouveau membre !`)
