@@ -107,7 +107,7 @@ bot.on("ready", async () => {
     });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "💬-général").send(`${member.username} a rejoint le serveur ! Bienvenue à toi !
+    member.guild.channels.find("name", "💬-général").send(`${member.client} a rejoint le serveur ! Bienvenue à toi !
 Un giveway sera organisé lors du passage des 100 membres ! 
 (${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
     var role1 = member.guild.roles.find('name', '📢Notif-Bot');
