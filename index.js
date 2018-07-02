@@ -107,9 +107,17 @@ bot.on("ready", async () => {
     });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "💬-général").send(`${member.client} a rejoint le serveur ! Bienvenue à toi !
+    var join_embed = new Discord.RichEmbed()
+    .setAuthor("Spyer", bot.user.avatarURL)
+    .setColor("96CA2D")
+    .setFooter(`Bienvenue à toi ${member} !`, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTimestamp()
+    .setTitle(`Arrivée d'un nouveau membre !`)
+	.setDescription(`${member} a rejoint le serveur ! Bienvenue à toi !
 Un giveway sera organisé lors du passage des 100 membres ! 
 (${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
+    member.guild.channels.find("name", "💬-général").send(join_embed);
     var role1 = member.guild.roles.find('name', '📢Notif-Bot');
     var role2 = member.guild.roles.find('name', '📢Notif-Serveur');
     var role3 = member.guild.roles.find('name', '📢Notif-Event');
