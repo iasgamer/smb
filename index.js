@@ -115,8 +115,8 @@ bot.on("guildMemberAdd", member => {
     .setTimestamp()
     .setTitle(`Arrivée d'un nouveau membre !`)
 	.setDescription(`${member} a rejoint le serveur ! Bienvenue à toi !
-    Un giveway sera organisé lors du passage des 100 membres ! 
-    (${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
+Un giveway sera organisé lors du passage des 100 membres ! 
+(${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
     member.guild.channels.find("name", "💬-général").send(join_embed);
     var role1 = member.guild.roles.find('name', '📢Notif-Bot');
     var role2 = member.guild.roles.find('name', '📢Notif-Serveur');
