@@ -66,7 +66,7 @@ Nombre de rôles après la suppression du rôle ${role.name} : ${role.guild.role
     role.guild.channels.find("name", "spyer-logs").send(roled_embed);
     });
 
-bot.on("messageUpdate", (oldMessage, newMessage) => {
+/*bot.on("messageUpdate", (oldMessage, newMessage) => {
     if(oldMessage.author.bot || oldMessage.cleanContent === newMessage.cleanContent) return;
     let msgup_embed = new Discord.RichEmbed()
     .setAuthor(newMessage.member.user.tag, newMessage.member.user.avatarURL)
@@ -76,7 +76,7 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 Ancien message : ``${oldMessage.cleanContent}``
 Nouveau message : ``${newMessage.cleanContent}```)
     newMessage.guild.channels.find("name", "spyer-logs").send(msgup_embed);
-    });
+    });*/
 
 bot.on("messageDelete", (message) => {
     if (message.author.bot) return;
@@ -115,8 +115,8 @@ bot.on("guildMemberAdd", member => {
     .setTimestamp()
     .setTitle(`Arrivée d'un nouveau membre !`)
 	.setDescription(`${member} a rejoint le serveur ! Bienvenue à toi !
-Un giveway sera organisé lors du passage des 100 membres ! 
-(${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
+    Un giveway sera organisé lors du passage des 100 membres ! 
+    (${bot.users.size}/100 soit ${100 - bot.users.size} membres avant le prochain giveway)`)
     member.guild.channels.find("name", "💬-général").send(join_embed);
     var role1 = member.guild.roles.find('name', '📢Notif-Bot');
     var role2 = member.guild.roles.find('name', '📢Notif-Serveur');
